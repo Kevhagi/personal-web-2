@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Creating Blog Page - detail</title>
+    <link rel="stylesheet" href="../public/assets/css/style.css" />
+    <link rel="shortcut icon" href="../public/assets/images/logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <div class="left">
+          <a class="logo" href="https://happytrigger.net"><img src="../public/assets/images/logo.png" alt="logo"></a>
+          <ul>
+              <li><a href="/" class="home-deactive">Home</a></li>
+              <li><a href="/blog" class="blog-deactive">Blog</a></li>
+          </ul>
+      </div>
+      <div class="right">
+          <a href="/contact">Contact Me</a>
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <div class="blog-detail" id="detailBlog">
+      {{#each dataDetail}}
+      <div class="blog-detail-container">
+        <h1>{{this.title}}</h1>
+        <div class="author">{{this.dateFormat}} | {{this.author}}</div>
+        <img src="../public/assets/images/blog-img-detail.png" alt="detail" />
+        <p>
+          {{this.content}}
+        </p>
+      </div>
+      {{/each}}
+    </div>
+  </body>
+</html>

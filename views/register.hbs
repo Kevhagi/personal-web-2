@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Contact Form</title>
+        <link rel="stylesheet" href="../public/assets/css/style.css">
+        <link rel="shortcut icon" href="../public/assets/images/logo.png" type="image/x-icon">
+        <script src="../public/assets/js/validasi.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="left">
+                <a class="logo" href="https://happytrigger.net"><img src="../public/assets/images/logo.png" alt="logo"></a>
+                <ul>
+                    <li><a href="/" class="home-deactive">Home</a></li>
+                    <li><a href="/blog" class="blog-deactive">Blog</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="/register" class="home-active">Register</a></li>
+                    <li><a href="/login" class="blog-deactive">Login</a></li>
+                </ul>
+                <a class="contact" href="/contact">Contact Me</a>
+            </div>
+        </nav>
+
+        {{#if messages.danger}}
+            <div class="alert alert-danger" role="alert">
+                {{messages.danger}}
+            </div>
+        {{/if}}
+        
+        <div class="container-contact">
+            <form action="/register" method="post">
+                <h2>Register</h2>
+
+                <div>
+                    <label for="input-name">Name</label>
+                    <input type="text" id="input-name" name="inputName">
+                </div>
+
+                <div>
+                    <label for="input-email">Email</label>
+                    <input type="email" id="input-email" name="inputEmail">
+                </div>
+                
+                <div>
+                    <label for="input-password">Password</label>
+                    <input type="password" id="input-password" name="inputPassword">
+                </div>
+                
+                <button type="submit" onclick="validasiRegistrasi()"><img src="../public/assets/images/send.svg" width="14" alt="send"> Submit</button>
+                
+            </form>
+        </div>
+    </body>
+</html>

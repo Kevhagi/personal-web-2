@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Creating Blog Page</title>
+    <link rel="stylesheet" href="../public/assets/css/style.css" />
+    <link rel="shortcut icon" href="../public/assets/images/logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <div class="left">
+          <a class="logo" href="https://happytrigger.net"><img src="../public/assets/images/logo.png" alt="logo"></a>
+          <ul>
+              <li><a href="/" class="home-deactive">Home</a></li>
+              <li><a href="/blog" class="blog-deactive">Blog</a></li>
+          </ul>
+      </div>
+      <div class="right">
+          <a class="contact" href="/contact">Contact Me</a>
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class="blog">
+      <div class="blog-form">
+        <div class="form-container">
+
+          <form action="/edit-blog/{{blogId}}" method="post">
+            <h2>Edit Post Blog</h2>
+            <div>
+              <label for="input-blog-title">Title</label>
+              <input name="inputTitle" id="input-blog-title" value="{{dataEdit.title}}" />
+            </div>
+            <div>
+              <label for="input-blog-content">Content</label>
+              <textarea name="inputContent" id="input-blog-content">{{dataEdit.content}}</textarea>
+            </div>
+            <div>
+              <label>Upload Image</label>
+              <div class="input-blog-image-group" id="select-file">
+                <label for="input-blog-image">
+                  <p>Attach File</p>
+                  <img src="../public/assets/images/file.png" alt="file" />
+                </label>
+                <input type="file" accept="image/*" id="input-blog-image" hidden/>
+              </div>
+            </div>
+            <div class="button-group">
+              <button>Post Blog</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

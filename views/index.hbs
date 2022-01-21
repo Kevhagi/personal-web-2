@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Web</title>
+        <link rel="stylesheet" href="../public/assets/css/style.css">
+        <link rel="shortcut icon" href="../public/assets/images/logo.png" type="image/x-icon">
+    </head>
+
+    <body>
+        <nav>
+            <div class="left">
+                <a class="logo" href="https://happytrigger.net"><img src="../public/assets/images/logo.png" alt="logo"></a>
+                <ul>
+                    <li><a href="/" class="home-active">Home</a></li>
+                    <li><a href="/blog" class="blog-deactive">Blog</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <a class="contact" href="/contact">Contact Me</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="section">
+                <div class="left">
+                    <div class="card">
+                        <div>
+                            <img src="../public/assets/images/kebin2.jpg" alt="kebin2"> 
+                        </div>
+
+                        <div>
+                            <h2>Kevin Jaya Susilo</h2>
+                            <p>Part of DumbWays Fullstack Javascript Bootcamp</p>
+                        </div>
+
+                        <div class="badge-skill">
+                            <ul>
+                                <li id="HTML">HTML</li>
+                                <li id="CSS">CSS</li>
+                                <li id="PHP">PHP</li>
+                                <li id="MySql">MySql</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <table cellpadding="5px">
+                            <tr>
+                                <th>Experience</th>
+                                <th>Year</th>
+                            </tr>
+                            {{#each experience}}
+                            <tr>
+                                <td>{{this.name}}</td>
+                                <td>{{this.year}}</td>
+                            </tr>
+                            {{/each}}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="title">
+                        <h1>What I do</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iure quod eum blanditiis deleniti id nisi. Earum, placeat itaque inventore perferendis accusantium incidunt quas, blanditiis minima iusto ipsam autem labore.</p> 
+                    </div>
+                    
+
+                    <div class="skill-container">
+                        <div>
+                            <h3>Frontend Developer</h3>
+                            <img src="../public/assets/images/js.svg" alt="javascript">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, reprehenderit aspernatur ratione odit blanditiis rerum. Iure excepturi mollitia dignissimos obcaecati laudantium pariatur tenetur itaque, inventore quas tempore odio praesentium deleniti?</p>
+                        </div>
+                        <div>
+                            <h3>Version Control</h3>
+                            <img src="../public/assets/images/github.svg" alt="github">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, reprehenderit aspernatur ratione odit blanditiis rerum. Iure excepturi mollitia dignissimos obcaecati laudantium pariatur tenetur itaque, inventore quas tempore odio praesentium deleniti?</p>
+                        </div>
+                        <div>
+                            <h3>Automated Deployment</h3>
+                            <img src="../public/assets/images/netlify.svg" alt="netlify">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, reprehenderit aspernatur ratione odit blanditiis rerum. Iure excepturi mollitia dignissimos obcaecati laudantium pariatur tenetur itaque, inventore quas tempore odio praesentium deleniti?</p>
+                        </div>
+                    </div>
+
+                    <div class="social-media">
+                        <div>
+                            <h3>Find me here!</h3>
+                            <a href="https://facebook.com/bukan.aisenveld" target="_blank"><img src="../public/assets/images/facebook.svg" alt="facebook"></a> 
+                            <a href="https://instagram.com/kaosuuuu" target="_blank"><img src="../public/assets/images/instagram.svg" alt="instagram"></a> 
+                            <a href="https://wa.me/+6285772810790" target="_blank"><img src="../public/assets/images/whatsapp.svg" alt="whatsapp"></a>
+                            <a href="https://t.me/kevinjayasusilo" target="_blank"><img src="../public/assets/images/telegram.svg" alt="telegram"></a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

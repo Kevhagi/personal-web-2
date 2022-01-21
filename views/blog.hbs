@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Creating Blog Page</title>
+    <link rel="stylesheet" href="../public/assets/css/style.css" />
+    <link rel="shortcut icon" href="../public/assets/images/logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <div class="left">
+          <a class="logo" href="https://happytrigger.net"><img src="../public/assets/images/logo.png" alt="logo"></a>
+          <ul>
+              <li><a href="/" class="home-deactive">Home</a></li>
+              <li><a href="/blog" class="blog-active">Blog</a></li>
+          </ul>
+      </div>
+      <div class="right">
+
+        {{#if isLogin}}
+          <ul>
+              <li><a href="#" class="home-active">Hello {{username.name}}!</a></li>
+              <li><a href="/logout" class="blog-deactive">Logout</a></li>
+          </ul>
+        {{else}}
+          <ul>
+              <li><a href="/register" class="home-deactive">Register</a></li>
+              <li><a href="/login" class="blog-deactive">Login</a></li>
+          </ul>
+        {{/if}}
+
+          <a class="contact" href="/contact">Contact Me</a>
+      </div>
+    </nav>
+
+    {{#if messages.success}}
+      <div class="alert alert-success" role="alert">
+          {{messages.success}}
+      </div>
+    {{/if}}
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class="blog">
+      
+      <div class="addButton">
+        {{#if isLogin}}
+        <button class="btn-add"><a href="add-blog">Create Post Blog</a></button>
+        {{/if}}
+      </div>
+
+      <div id="contents" class="blog-list">
+        <!-- dynamic content would be here -->
+        {{#each blogs}}
+        <div class="blog-list-item">
+          <div class="blog-image">
+            <img src="../uploads/{{this.image}}" alt="blog-img" />
+          </div>
+          <div class="blog-content">
+            <div class="btn-group">
+              {{#if ../isLogin}}
+              <button class="btn-edit"><a href="/edit-blog/{{this.id}}">Edit Post</a></button>
+
+              <!-- Simple confirm box -->
+              <script>
+                function confirmBox(id){
+                  let a = document.createElement('a')
+
+                  if (confirm("Are you sure want to delete this post?")) {
+                    a.href= `/delete-blog/${id}`
+                    a.click()
+                  }
+                }
+              </script>
+
+              <button class="btn-delete" onclick="confirmBox({{this.id}})">Delete Post</button>
+              {{/if}}
+            </div>
+            <h1>
+              <a href="/blog-detail/{{this.id}}" target="_blank"
+                >{{this.title}}</a
+              >
+            </h1>
+            <div class="detail-blog-content">
+              {{this.dateFormat}} | {{this.name}}
+            </div>
+            <p>
+              {{this.content}}
+            </p>
+            <div class="blog-time-post" style="text-align: right; font-size: 13px; color: gray;">
+                {{this.distanceTime}}
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </body>
+</html>
