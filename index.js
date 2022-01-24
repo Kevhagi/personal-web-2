@@ -178,7 +178,7 @@ app.get('/blog-detail/:id', function (request, response) {
                 return data
             })
 
-            response.render('blog-detail.hbs', {id : blogId, dataDetail : dataMap})
+            response.render('blog-detail.hbs', {dataDetail : dataMap})
         })
     })
 })
