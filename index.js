@@ -88,9 +88,9 @@ function getDistanceTime(time) {
 app.get('/', function (request, response) {
 
     db.connect(function(err, client, done) {
-        if (err) {
+        /*if (err) {
             throw err
-        }
+        }*/
 
         client.query('SELECT * FROM tb_experience', function(err, result) {
             if (err) {
