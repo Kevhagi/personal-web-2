@@ -112,9 +112,9 @@ app.get('/blog', function (request, response) {
 	FROM public.tb_blog LEFT JOIN tb_user ON tb_blog.author_id = tb_user.id ORDER BY "postAt" DESC;`
 
     db.connect(function(err, client, done) {
-        if (err) {
+        /*if (err) {
             throw err
-        }
+        }*/
 
         client.query(query, function(err, result) {
             if (err) {
@@ -375,6 +375,6 @@ app.post('/edit-blog/:id', function (request, response) {
 
 
 // Indikator server nyala
-app.listen(process.env.PORT || 5000, function() {
-    console.log("Server jalan di PORT 5000");
+app.listen(process.env.PORT || 5432, function() {
+    console.log(`Server jalan di PORT ${process.env.PORT}`);
 })
