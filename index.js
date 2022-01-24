@@ -375,6 +375,6 @@ app.post('/edit-blog/:id', function (request, response) {
 
 
 // Indikator server nyala
-app.listen(7000, function() {
-    console.log("Server jalan di PORT 7000");
+app.listen(process.env.PORT || 5000, function() {
+    console.log("Server jalan di PORT 5000");
 })
