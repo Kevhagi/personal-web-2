@@ -6,7 +6,9 @@ const dbPool = new Pool({
     port : 5432,
     user :  'tirtuvwurrnxfb', //'postgres',
     password : '24be50d5b539e88cfd2618b0a6156e885ed479b0e658c3628d031a0b70e27c13', //'admin'
-    ssl : true
+    ssl : {
+        rejectUnauthorized: false
+    }
 })
 
 module.exports = dbPool
